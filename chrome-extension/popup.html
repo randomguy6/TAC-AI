@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>T&C Summarizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 400px;
+      padding: 10px;
+      background-color: #f4f4f4;
+    }
+    h3 {
+      color: #333;
+      margin-top: 0;
+    }
+    #summaryContent {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      min-height: 100px;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap; /* Preserves whitespace and wraps text */
+      word-wrap: break-word; /* Breaks long words */
+      font-size: 0.9em;
+      color: #555;
+    }
+    .loading-message {
+      color: #007bff;
+      font-style: italic;
+    }
+    .error-message {
+      color: #dc3545;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h3>Terms & Conditions Summary</h3>
+  <div id="summaryContent" class="loading-message">Loading summary...</div>
+  <script src="popup.js"></script>
+</body>
+</html>
