@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 async function summarizeWithGemini(text) {
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
+  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`;
 
   const prompt = `Summarize the following terms and conditions in plain language, highlighting key clauses and potential implications for the user. Keep the summary concise and easy to understand:\n\n${text}`;
 
@@ -40,7 +40,8 @@ async function summarizeWithGemini(text) {
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-goog-api-key': GEMINI_API_KEY
       },
       body: JSON.stringify({
         contents: [{
